@@ -1,0 +1,17 @@
+{
+  "name": "release-page",
+  "version": "0.0.0",
+  "description": "Platform for artists to showcase their official music releases across various streaming services",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --exec \"esbuild --bundle --external:happy-dom --platform=node generate.mjs --outfile=_generate.cjs && node \" --ignore ./_generate.cjs --watch src/ -e jsx,css  _generate.cjs",
+    "build": "esbuild --bundle --external:happy-dom --platform=node generate.mjs --outfile=_generate.cjs && node _generate.cjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.20.1",
+    "happy-dom": "^13.7.1",
+    "kaif": "^0.0.1",
+    "nodemon": "^3.1.0"
+  }
+}
