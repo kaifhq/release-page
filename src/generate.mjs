@@ -38,6 +38,11 @@ const gen = (lang = 'en') => {
   document.documentElement.lang = lang
 
   const htmlCode = document.documentElement.outerHTML
+    /* workaround, because happy-dom doesn't support it */
+    .replace(
+      '<div class="lang-select">',
+      '<div translate="no" class="lang-select">',
+    )
   let p = './dist/index.html'
   if (lang != languages[0]) {
     p = `./dist/${lang}.html`
