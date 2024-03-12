@@ -3,24 +3,35 @@ import Kaif from 'kaif'
 
 import data from './links.json'
 
-const Meta = () => {
+const Meta = (lang = 'en') => {
+  const {
+    colorBg, cover, description, title,
+  } = data[lang]
   return (
     <head>
       <meta charset="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-      <meta name="description" content={data.description}/>
-      <meta property="twitter:card" content="summary_large_image"/>
+
+      <link rel="preload" as="image" href={cover}/>
+
+      <meta name="theme-color" content={colorBg}/>
+      <link rel="icon" href={cover}/>
+      <link rel="apple-touch-icon" href={cover}/>
+
+
+      <title innerText={title}/>
+      <meta name="description" content={description}/>
+
       <meta property="og:type" content="website"/>
-      <meta property="og:title" content={data.title}/>
-      <meta property="og:description" content={data.description}/>
-      <meta property="twitter:title" content={data.title}/>
-      <meta property="twitter:description" content={data.description}/>
-      <meta property="og:image" content={data.cover}/>
-      <meta property="twitter:image" content={data.cover}/>
-      <meta name="theme-color" content={data.colorBg}/>
-      <link rel="icon" href={data.cover}/>
-      <link rel="apple-touch-icon" href={data.cover}/>
-      <title innerText={data.title}/>
+      <meta property="og:title" content={title}/>
+      <meta property="og:description" content={description}/>
+      <meta property="og:image" content={cover}/>
+
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:title" content={title}/>
+      <meta name="twitter:description" content={description}/>
+      <meta name="twitter:image" content={cover}/>
+
     </head>
   )
 }

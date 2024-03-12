@@ -1,3 +1,5 @@
 node_modules
-dist/index.html
-_generate.cjs
+
+bin
+
+dist/*.html

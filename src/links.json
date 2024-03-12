@@ -1,12 +1,44 @@
 {
-  "artist": "Taylor Swift",
-  "name": "The Tortured Poets Department",
-  "date": "Available April 19",
-  "title": "Taylor Swift",
-  "description": "Pre-Save new music from Taylor Swift.",
-  "cover": "./cover.jpeg",
-  "colorBg": "#e9e5e1",
-  "colorText": "#3c342e",
-  "Spotify": "https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3",
-  "Youtube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nwM2VykawOmNH-z3L283XEI95Jb-sxIBo"
+  "en": {
+    "artist": "Taylor Swift",
+    "name": "The Tortured Poets Department",
+    "date": "Available April 19",
+    "title": "Taylor Swift",
+    "description": "Pre-Save new music from Taylor Swift.",
+    "cover": "./cover.jpeg",
+    "colorBg": "#e9e5e1",
+    "colorText": "#3c342e",
+    "links": {
+      "Listen on Spotify": "https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3",
+      "Listen on Youtube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nwM2VykawOmNH-z3L283XEI95Jb-sxIBo"
+    }
+  },
+  "ru": {
+    "artist": "Тейлор Свифт",
+    "name": "The Tortured Poets Department",
+    "date": "Выходит 19 Апреля",
+    "title": "Тейлор Свифт",
+    "description": "Добавь новую музыку Тейлор Свифт.",
+    "cover": "./cover.jpeg",
+    "colorBg": "#e9e5e1",
+    "colorText": "#3c342e",
+    "links": {
+      "Добавить на Spotify": "https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3",
+      "Добавить на Youtube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nwM2VykawOmNH-z3L283XEI95Jb-sxIBo"
+    }
+  },
+  "fr": {
+    "artist": "Taylor Swift",
+    "name": "The Tortured Poets Department",
+    "date": "Libéré le 19 avril",
+    "title": "Taylor Swift",
+    "description": "Pré-enregistrez la nouvelle musique de Taylor Swift.",
+    "cover": "./cover.jpeg",
+    "colorBg": "#e9e5e1",
+    "colorText": "#3c342e",
+    "links": {
+      "Ajouter à Spotify": "https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3",
+      "Ajouter à Youtube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nwM2VykawOmNH-z3L283XEI95Jb-sxIBo"
+    }
+  }
 }

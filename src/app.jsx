@@ -3,20 +3,20 @@ import Kaif from 'kaif'
 
 import data from './links.json'
 
-const Group = () => {
+const Group = ({name, date, links}) => {
   const children = [
-    <h2>{data.name}</h2>,
-    <span className="date">{data.date}</span>,
+    <h2>{name}</h2>,
+    <span className="date">{date}</span>,
   ]
-  for (const platform of ["Spotify", "Youtube Music"]) {
-    const href = 
+  for (const linkText in links) {
+    const href = links[linkText]
     children.push(
       <a
         className="link"
-        href={data[platform]}
         target="_blank"
+        href={href}
       >
-        Listen on {platform}
+        {linkText}
       </a>
     )
   }
@@ -27,21 +27,57 @@ const Group = () => {
   }
 }
 
-const Image = () => {
-  return (
-    <img
-      src={data.cover}
-      className="cover"
-    />
-  )
+const LanguageSwitch = ({languages, selected}) => {
+  const children = languages.map(lang => {
+    if (lang == selected) {
+      return (
+        <span
+          className="lang selected"
+          innerText={lang}
+        />
+      )
+    }
+    let p = './index.html'
+    if (lang != languages[0]) {
+      p = `./${lang}.html`
+    }
+
+    return (
+      <a
+        className="lang"
+        innerText={lang}
+        href={p}
+      />
+    )
+  })
+
+  return {
+    elem: 'div',
+    className: 'lang-select',
+    children,
+  }
 }
 
-const App = () => {
+const App = (lang = 'en') => {
+  const languages = Object.keys(data)
+  const {
+    artist, cover, links, name, date
+  } = data[lang]
+
+
   return (
     <div id="root">
-      <h1>{data.artist}</h1>
-      <Image />
-      <Group />
+      <h1>{artist}</h1>
+      {languages.length > 1
+        ? <LanguageSwitch languages={languages} selected={lang}/>
+        : ''
+      }
+      <img
+        loading="lazy"
+        src={cover}
+        className="cover"
+      />
+      <Group links={links} name={name} date={date} />
     </div>
   )
 }

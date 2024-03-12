@@ -5,6 +5,7 @@
 html {
   background: var(--theme-ui-colors-background);
   background-attachment: fixed;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -33,6 +34,36 @@ h1 {
   margin: 1rem 0;
   text-align: center;
 }
+
+.lang-select {
+  grid-area: lang;
+  background-color: var(--theme-ui-colors-text);
+  display: flex;
+  justify-content: center;
+  justify-self: flex-end;
+  align-items: center;
+  border-radius: 9999px;
+  border: 0.25rem solid var(--theme-ui-colors-text);
+  margin: 0.5rem;
+  width: min-content;
+  box-sizing: border-box;
+}
+.lang {
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 9999px;
+  padding: 0.25rem 0.5rem;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--theme-ui-colors-background);
+}
+.lang.selected {
+  background-color: var(--theme-ui-colors-background);
+  color: var(--theme-ui-colors-text);
+}
+
 h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -54,6 +85,15 @@ h2 {
   box-sizing: border-box;
   user-select: none;
   aspect-ratio: 1;
+  opacity: 1;
+  animation: image-load 0.2s ease-in-out;
+}
+@keyframes image-load {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
 }
 
 .link-group {
@@ -79,12 +119,12 @@ h2 {
   transition: all 0.25s ease-in-out;
   box-sizing: border-box;
 }
+.link:visited {
+  color: var(--theme-ui-colors-text);
+}
 .link:visited:hover,.link:hover {
   background-color: var(--theme-ui-colors-text);
   color: var(--theme-ui-colors-background);
-}
-.link:visited {
-  color: var(--theme-ui-colors-text);
 }
 
 @media (min-width: 990px) {
@@ -98,11 +138,20 @@ h2 {
 
   #root {
     display: grid;
-    grid-template: "head head" "links cover" / 1fr 1fr;
+    grid-template: "head lang" "links cover" / 1fr 1fr;
     grid-gap: 10px;
   }
 
   .cover {
-    padding: 5%;
+    margin: 5%;
+  }
+  .lang-select {
+    margin: 5%;
+  }
+}
+
+@media print {
+  .lang-select {
+    display: none;
   }
 }
