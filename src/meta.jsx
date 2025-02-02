@@ -1,7 +1,7 @@
 /** @jsx Kaif.h @jsxFrag Kaif.Fragment */
 import Kaif from 'kaif'
 
-import data from './links.json'
+import data from './translation.json'
 
 const Meta = (lang = 'en') => {
   const {

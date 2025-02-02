@@ -4,7 +4,7 @@ import { Window } from 'happy-dom'
 import Kaif from 'kaif'
 import App from './app.jsx'
 import Meta from './meta.jsx'
-import data from './links.json'
+import data from './translation.json'
 
 const languages = Object.keys(data)
 
