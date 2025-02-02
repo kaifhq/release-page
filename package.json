@@ -10,7 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.20.1",
-    "happy-dom": "^13.7.7",
+    "happy-dom": "^16.8.1",
     "kaif": "^0.0.1",
     "nodemon": "^3.1.0"
   }
